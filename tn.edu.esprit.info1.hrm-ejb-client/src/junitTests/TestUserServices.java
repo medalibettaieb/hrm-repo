@@ -1,7 +1,6 @@
 package junitTests;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import locator.ServicesLocator;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,15 +10,14 @@ import services.interfaces.UserServicesRemote;
 import domain.Employee;
 
 public class TestUserServices {
-	private Context context;
 	private UserServicesRemote userServicesRemote;
 
 	@Before
-	public void setUp() throws Exception {
-		context = new InitialContext();
-		userServicesRemote = (UserServicesRemote) context
-				.lookup("ejb:/tn.edu.esprit.info1.hrm-ejb/UserServices!"
-						+ UserServicesRemote.class.getCanonicalName());
+	public void setUp() {
+		String jndiName = "ejb:/tn.edu.esprit.info1.hrm-ejb/UserServices!"
+				+ UserServicesRemote.class.getCanonicalName();
+		userServicesRemote = (UserServicesRemote) ServicesLocator.getInstance()
+				.getProxy(jndiName);
 	}
 
 	@Test
