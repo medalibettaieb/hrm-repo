@@ -7,6 +7,7 @@
 		<class>domain.User</class>
 		<class>domain.Leave</class>
 		<class>domain.Employee</class>
+		<class>domain.Admin</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>

@@ -13,4 +13,8 @@ public interface UserServicesLocal {
 	User findUserById(Integer id);
 
 	List<User> findAllUsers();
+
+	Boolean deleteUser(User user);
+
+	User login(String login, String password);
 }

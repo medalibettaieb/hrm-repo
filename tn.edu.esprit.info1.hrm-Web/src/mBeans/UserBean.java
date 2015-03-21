@@ -17,6 +17,7 @@ public class UserBean {
 	// model
 	private Employee employee = new Employee();
 	private List<User> users = new ArrayList<>();
+	private User userLoggedIn = new User();
 	// injection of the proxy
 	@EJB
 	private UserServicesLocal userServicesLocal;
@@ -25,6 +26,20 @@ public class UserBean {
 	public String doAddEmployee() {
 		userServicesLocal.addUser(employee);
 		return "";
+	}
+
+	public String doLogin() {
+		userLoggedIn = userServicesLocal.login(userLoggedIn.getLogin(),
+				userLoggedIn.getPassword());
+		if (userLoggedIn != null) {
+			if (userLoggedIn instanceof Employee) {
+				return "/pages/welcomeEmployee?faces-redirect=true";
+			} else {
+				return "/pages/listUsers?faces-redirect=true";
+			}
+		} else {
+			return "/error";
+		}
 	}
 
 	public Employee getEmployee() {
@@ -42,6 +57,14 @@ public class UserBean {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+
+	public User getUserLoggedIn() {
+		return userLoggedIn;
+	}
+
+	public void setUserLoggedIn(User userLoggedIn) {
+		this.userLoggedIn = userLoggedIn;
 	}
 
 }

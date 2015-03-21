@@ -6,6 +6,7 @@ import javax.ejb.Startup;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import domain.Admin;
 import domain.Employee;
 
 /**
@@ -30,9 +31,13 @@ public class DataBasePopulator {
 		Employee employee2 = new Employee("foulen2", "foulen2", "foulen2");
 		Employee employee3 = new Employee("foulen3", "foulen3", "foulen3");
 
+		Admin admin = new Admin("admin", "admin", "admin", "All");
+
 		entityManager.persist(employee);
 		entityManager.persist(employee2);
 		entityManager.persist(employee3);
+
+		entityManager.persist(admin);
 
 	}
 
