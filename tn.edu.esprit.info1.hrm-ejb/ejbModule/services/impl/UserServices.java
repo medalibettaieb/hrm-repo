@@ -34,4 +34,9 @@ public class UserServices implements UserServicesRemote, UserServicesLocal {
 		return b;
 	}
 
+	@Override
+	public User findUserById(Integer id) {
+		return entityManager.find(User.class, id);
+	}
+
 }

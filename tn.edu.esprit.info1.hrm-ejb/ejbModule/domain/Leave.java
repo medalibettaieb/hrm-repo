@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -29,7 +31,17 @@ public class Leave implements Serializable {
 		super();
 	}
 
+	public Leave(Date dateFrom, Date dateTo, String subject, User user) {
+		super();
+		this.dateFrom = dateFrom;
+		this.dateTo = dateTo;
+		this.subject = subject;
+		this.user = user;
+		this.state = false;
+	}
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return this.id;
 	}

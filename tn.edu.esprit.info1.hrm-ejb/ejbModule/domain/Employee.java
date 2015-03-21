@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @Entity
 public class Employee extends User implements Serializable {
 
-	private Float balance = 0.0F;
+	private Float balance = 30.0F;
 	private static final long serialVersionUID = 1L;
 
 	public Employee() {

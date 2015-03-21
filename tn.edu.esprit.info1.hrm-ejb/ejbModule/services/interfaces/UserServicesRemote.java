@@ -8,4 +8,6 @@ import domain.User;
 public interface UserServicesRemote {
 	Boolean addUser(User user);
 
+	User findUserById(Integer id);
+
 }
