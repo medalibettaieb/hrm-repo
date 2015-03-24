@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head >page de login</h:head>
+<body>
+
+	<f:view>
+
+		<h:form>
+			<p:panel id="panel" header="login" toggleable="true">
+				<h:panelGrid columns="2">
+					<h:outputText value="login" />
+					<p:inputText value="#{loginBean.login}"></p:inputText>
+					<h:outputText value="password" />
+					<p:inputText value="#{loginBean.pwd}"></p:inputText>
+				</h:panelGrid>
+				<p:commandButton id="btn" value="sign in" update="panel"
+					action="#{loginBean.doLogin}" />
+			</p:panel>
+
+		</h:form>
+	</f:view>
+</body>
+</html>

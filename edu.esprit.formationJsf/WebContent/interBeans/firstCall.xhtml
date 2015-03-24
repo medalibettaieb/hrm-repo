@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+	<f:view>
+
+		<h:form>
+			<p:panel header="inter"  toggleable="true">
+				<p:panelGrid id="p1" columns="2" >
+					<h:outputText value="value of beanOne" />
+					<p:inputText id="input1" value="#{beanOne.someStuff}"></p:inputText>
+					
+				</p:panelGrid>
+				<p:commandButton value="toc toc"  action="#{beanTwo.doSomeStuff}"></p:commandButton>
+			</p:panel>
+		</h:form>
+	</f:view>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+	<f:view>
+
+		<h:form>
+			<p:commandLink action="return" value="return to the othe page"></p:commandLink>
+			<p:panel header="value retreved">
+				<h:outputText value="value of beanOne" />
+				<p:inputText id="input1" value="#{beanTwo.theOtherStuff}"></p:inputText>
+
+			</p:panel>
+		</h:form>
+	</f:view>
+</body>
+</html>
