@@ -1,15 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
 
-<h:head></h:head>
-<body>
-	<h:form>
-		<h:outputText value="subject" />
-		<h:inputText value="#{leaveBean.leave.subject}" />
-		<h:commandButton action="#{leaveBean.doAddLeave}" value="add" />
-	</h:form>
-</body>
-</html>
+	<ui:define name="pageTitle">add leave</ui:define>
+	<ui:define name="pageContent">
+		<h:form>
+			<h2>add leave</h2>
+			<h:panelGrid columns="2">
+				<h:outputText value="From date" />
+				<p:calendar value="#{leaveBean.leave.dateFrom}" />
+				<h:outputText value="To date" />
+				<p:calendar value="#{leaveBean.leave.dateTo}" />
+				<h:outputText value="subject" />
+				<h:inputText value="#{leaveBean.leave.subject}" />
+			</h:panelGrid>
+			<h:commandButton action="#{leaveBean.doAddLeave}" value="add" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
