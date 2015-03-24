@@ -44,4 +44,15 @@ public class LeaveManagement implements LeaveManagementRemote,
 		return b;
 	}
 
+	@Override
+	public Boolean addLeave(Leave leave) {
+		Boolean b = false;
+		try {
+			entityManager.persist(leave);
+			b = true;
+		} catch (Exception e) {
+		}
+		return b;
+	}
+
 }

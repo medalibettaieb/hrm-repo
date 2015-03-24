@@ -6,16 +6,10 @@
 
 <h:head></h:head>
 <body>
-	<h1>login page</h1>
 	<h:form>
-		<h:panelGrid columns="2">
-
-			<h:outputText value="login" />
-			<h:inputText value="#{beanOne.userLoggedIn.login}" />
-			<h:outputText value="passwor" />
-			<h:inputSecret value="#{beanOne.userLoggedIn.password}" />
-			<h:commandButton value="add" action="#{beanOne.doLogin}" />
-		</h:panelGrid>
+		<h:outputText value="subject" />
+		<h:inputText value="#{leaveBean.leave.subject}" />
+		<h:commandButton action="#{leaveBean.doAddLeave}" value="add" />
 	</h:form>
 </body>
 </html>

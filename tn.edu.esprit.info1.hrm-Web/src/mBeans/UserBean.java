@@ -11,7 +11,7 @@ import services.interfaces.UserServicesLocal;
 import domain.Employee;
 import domain.User;
 
-@ManagedBean
+@ManagedBean(name="beanOne")
 @SessionScoped
 public class UserBean {
 	// model
@@ -33,7 +33,9 @@ public class UserBean {
 				userLoggedIn.getPassword());
 		if (userLoggedIn != null) {
 			if (userLoggedIn instanceof Employee) {
-				return "/pages/welcomeEmployee?faces-redirect=true";
+				System.out.println(userLoggedIn.getName());
+				employee = (Employee) userLoggedIn;
+				return "/pages/addLeave?faces-redirect=true";
 			} else {
 				return "/pages/listUsers?faces-redirect=true";
 			}
